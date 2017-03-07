@@ -1,0 +1,5 @@
+git status
+git checkout -b pages_and_layout                            #creates new branch
+git add .
+git commit -m "Created Test folder for partial development"
+git push origin pages_and_layout                            # pushed changes to pages_and_layout

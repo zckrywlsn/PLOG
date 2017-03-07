@@ -1,0 +1,26 @@
+.alert {
+    text-align: center;
+    }
+.checkbox {
+    padding-left: 20px;
+}
+.container-showcase {
+    padding-top: 30px;
+}
+.modal-btn {
+    padding-top: 10px;
+}
+.progress-label {
+    float: left;
+    margin-right: 1em;
+}
+.progress-bar[aria-valuenow="1"] { width: 20%; }
+.progress-bar[aria-valuenow="2"] { width: 45%; }
+.progress-bar[aria-valuenow="3"] { width: 80%; }
+.progress-bar[aria-valuenow="4"] { width: 68%; }
+.progress-bar[aria-valuenow="5"] { width: 18%; }
+.progress-bar[aria-valuenow="6"] { width: 38%; }
+
+.testing {
+    padding-top: 30px;
+}

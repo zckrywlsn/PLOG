@@ -25,12 +25,10 @@
           echo '
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">
-                <ul class="nav nav-pills" role="tablist" >
-                  <li role="presentation" class="active"><a href="#">'.$row["csa_name"].'</a></li>
-                  <li role="presentation"><a href="#">'.$row["reg_date"].'</a></li>
-                  <li role="presentation"><a href="#"> //<span class="badge">'.$row["classification"].'</span>\\\</a></li>
-                </ul>
+                <h3 class="panel-title pull-left">'.$row["csa_name"].'</h3>
+                <div class="panel-title pull-right">'.$row["reg_date"].'</div>
+                <h4 class="panel-title"><br><br><span class="label label-default">'.$row["classification"].'</span></h4>
+                <div class="clearfix"></div>
               </div>
               <div class="panel-body"><p>'. $row["pass_block"].'</p>
               </div>

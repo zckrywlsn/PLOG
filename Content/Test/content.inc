@@ -1,6 +1,6 @@
 
   <?php
-  include "Content/Scripts/raid_health.php";
+  include "../Scripts/raid_health.php";
   
   
     echo '<div class="col-md-8">';
@@ -13,7 +13,7 @@
     $DB = "CSA_log";
     $conn = new mysqli($servername, $username, $password, $DB);
     $query = mysqli_real_escape_string($conn, $_POST["search"]);
-    $sql = "SELECT reg_date, csa_name, classification, pass_block, post_type  FROM Logs WHERE pass_block LIKE '%". $query ."%' ORDER BY reg_date DESC";
+    $sql = "SELECT reg_date, csa_name, classification, pass_block, post_type, id  FROM Logs WHERE pass_block LIKE '%". $query ."%' ORDER BY reg_date DESC";
     //end test
     
     //$sql = "SELECT reg_date, csa_name, classification, pass_block, post_type FROM Logs ORDER BY reg_date DESC ";
@@ -35,7 +35,7 @@
               <div class="panel-body"><p>'. $row["pass_block"].'</p>
               </div>
                <div class="panel-footer">
-                <input class="btn btn-default" type="submit" value="Edit">
+               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal" data-whatever="'.$row["id"].'" data-passon="'.$row["pass_block"].'"->EDIT</button>
                 <input class="btn btn-default" type="submit" value="Delete">
                </div>
             </div>';

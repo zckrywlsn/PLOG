@@ -1,9 +1,18 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="style.css">
+</head>  
 <?php
-include ("Content/Dashboard/header.php");
+include ("header.php");
+include ("footer.php");
 ?>
 
 <!-- begining of page -->
-
+<div class="container-showcase"> <!-- keeps errors below header -->
   <?php
   if (!isset ($_GET["page"])){
     include "content.inc";
@@ -11,8 +20,22 @@ include ("Content/Dashboard/header.php");
     include $_GET["page"] . "content.inc";
   }
   ?>
+</div> <!-- end of showcase -->
 
+<!-- Scripts at the end to help page load quicker -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<?php
-include ("Content/Dashboard/footer.php");
-?>
+<!-- js for catching modal varaible passes on edit auto fill -->
+<script>
+  $('#editModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var passonb = button.data('passon')
+    var modal = $(this)
+    modal.find('.modal-title').text('Edit Message: ID ' + recipient)
+    modal.find('.modal-body textarea').val(passonb)
+  })
+</script>
+</body>
+</html>

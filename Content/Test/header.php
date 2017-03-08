@@ -67,7 +67,7 @@ function validateForm() {
     }
 }
 </script>
-<div class="container-showcase"> <!-- keeps errors below header -->
+
 
 <!-- Creates New Post  Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -176,4 +176,4 @@ $conn->close();
   }
 ?>
 
-</div> <!-- end of showcase -->
+

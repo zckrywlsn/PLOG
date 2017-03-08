@@ -31,6 +31,16 @@
 <!-- Scripts at the end to help page load quicker -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<!-- js for catching modal varaible passes on edit auto fill -->
+<script>
+  $('#editModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var recipient = button.data('whatever')
+    var passonb = button.data('passon')
+    var modal = $(this)
+    modal.find('.modal-title').text('Edit Message: ID ' + recipient)
+    modal.find('.modal-body textarea').val(passonb)
+  })
+</script>
 </body>
 </html>

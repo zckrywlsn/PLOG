@@ -49,7 +49,7 @@ include("footer.php");
               echo "Error creating table:" . $conn->error;
           }
         
-        //inserting into mysql!
+        //inserting New post into mysql!
         
         // define variables and set to empty values
         $nameErr = $ClassiErr = $inputTypeErr = $PassOnErr = "";
@@ -80,6 +80,8 @@ include("footer.php");
             $Pass_On = mysqli_real_escape_string($conn, $_POST["PassOn"]); //accounts for special characters
           }
         }
+        
+        
         
         
         if ((empty($nameErr)) && (empty($ClassiErr)) && (empty($inputTypeErr)) && (empty($PassOnErr))) {

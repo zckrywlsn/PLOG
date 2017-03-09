@@ -49,8 +49,61 @@ include("footer.php");
               echo "Error creating table:" . $conn->error;
           }
         
-        //inserting New post into mysql!
+        //Checking for delete and editid, 
         
+        //Checking for editid,
+        if (!empty($_POST["editid"])) {
+          $editpostid = ($_POST["editid"]);
+          
+             //inserting New post into mysql!
+            // define variables and set to empty values
+            $nameErr = $ClassiErr = $inputTypeErr = $PassOnErr = "";
+            $Name = $Class = $inputType = $PassOn = "";
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              if (empty($_POST["Name"])) {
+                $nameErr = "Name is required";
+              } else {
+                $Name = ($_POST["Name"]);
+              }
+            
+              if (empty($_POST["Class"])) {
+                $ClassiErr = "Class is required";
+              } else {
+                $Class = ($_POST["Class"]);
+              }
+            
+              if (empty($_POST["inputType"])) {
+                $inputTypeErr = "Type is required";
+              } else {
+                $inputType = ($_POST["inputType"]);
+              }
+            
+              if (empty($_POST["PassOn"])) {
+                $PassOnErr = "Passon please";
+              } else {
+                $Pass_On = mysqli_real_escape_string($conn, $_POST["PassOn"]); //accounts for special characters
+              }
+            }
+    
+            
+            if ((empty($nameErr)) && (empty($ClassiErr)) && (empty($inputTypeErr)) && (empty($PassOnErr))) {
+              $sql = "UPDATE Logs SET  csa_name='$Name', classification='$Class',pass_block='$Pass_On', post_type='$inputType' WHERE id='$editpostid';";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+                
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+            
+            }else{
+              echo "there is missing info";
+            }
+        }else{
+        //--------------------------------------
+        
+        //inserting New post into mysql!
         // define variables and set to empty values
         $nameErr = $ClassiErr = $inputTypeErr = $PassOnErr = "";
         $Name = $Class = $inputType = $PassOn = "";
@@ -98,6 +151,10 @@ include("footer.php");
         }else{
           echo "there is missing info";
         }
+        }
+        
+        echo "this is the ID" . $_POST["editid"];
+        
         
         ?>
       <div>

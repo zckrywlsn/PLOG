@@ -13,7 +13,7 @@
     //$DB = "CSA_log";
     //$conn = new mysqli($servername, $username, $password, $DB);
     $query = mysqli_real_escape_string($conn, $_POST["search"]);
-    $sql = "SELECT reg_date, csa_name, classification, pass_block, post_type, id  FROM Logs WHERE pass_block LIKE '%". $query ."%' ORDER BY reg_date DESC";
+    $sql = "SELECT reg_date, csa_name, classification, pass_block, post_type, id  FROM Logs WHERE pass_block LIKE '%". $query ."%' ORDER BY id DESC";
     //end test
     
     //$sql = "SELECT reg_date, csa_name, classification, pass_block, post_type FROM Logs ORDER BY reg_date DESC ";
@@ -26,7 +26,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title pull-left">'.$row["csa_name"].'</h3>
-                <div class="panel-title pull-right">'.$row["reg_date"].'</div>
+                <div class="panel-title pull-right">Last Updated:  '.$row["reg_date"].'</div>
                 <h4 class="panel-title"><br><br><span class="label label-default">'.$row["classification"].'</span></h4>
                 <div class="clearfix"></div>
               </div>

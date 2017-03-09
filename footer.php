@@ -97,9 +97,8 @@ function validateEdit() {
         <div class="well well-lg">
           <form id="ginput" action="index.php?page=Content/Post/" method="post" onsubmit="return validateEdit()">
             <div class="form-group">
-              <input type="hidden" name="logid" value="<?php echo (isset($clicked)) ?  $clicked : '' ?>" />
               <label for="PassOn">Pass On</label>
-              <textarea class="form-control" rows="6" name="PassOn"><?php echo $postedit ?></textarea>
+              <textarea class="form-control" rows="6" name="PassOn"></textarea> 
               <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                   <div>
@@ -133,7 +132,8 @@ function validateEdit() {
                     </select>
                   </div>
                   <div class="text-center modal-btn">
-                    <input class="btn btn-success" type="submit" value="Submit">
+                    <button class="btn btn-success" type="submit" value="Submit">Submit</button>
+                    <input type="hidden" name="editid" />
                   </div>
                 </div>
               </div>

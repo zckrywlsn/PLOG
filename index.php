@@ -37,9 +37,11 @@
     var button = $(event.relatedTarget)
     var recipient = button.data('whatever')
     var passonb = button.data('passon')
+   
     var modal = $(this)
     modal.find('.modal-title').text('Edit Message: ID ' + recipient)
     modal.find('.modal-body textarea').val(passonb)
+    modal.find('.modal-body input').val(recipient)
   })
 </script>
 </body>

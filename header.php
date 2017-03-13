@@ -11,8 +11,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <form id="plog" action="index.php" method="post">
-      <a class="navbar-brand" href="#" type="Submit" name="count">PLOG</a> <!-- count for login verification -->
+      <form class="navbar-form navbar-left" action="index.php" method="post">
+        <button type="submit" name="count" class="btn btn-default"><b>PLOG</b></button>
       </form>
     </div>
 

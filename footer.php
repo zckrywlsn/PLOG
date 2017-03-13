@@ -74,6 +74,7 @@ function validateEdit() {
                   </div>
                   <div class="text-center modal-btn">
                     <input class="btn btn-success" type="submit" value="Submit">
+                    <input type="hidden" name="count" /> <!-- count for login verification -->
                   </div>
                 </div>
               </div>
@@ -134,6 +135,7 @@ function validateEdit() {
                   <div class="text-center modal-btn">
                     <button class="btn btn-success" type="submit" value="Submit">Submit</button>
                     <input type="hidden" name="editid" />
+                    <input type="hidden" name="count" /> <!-- count for login verification -->
                   </div>
                 </div>
               </div>
@@ -159,6 +161,7 @@ function validateEdit() {
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary">OK</button>
+        <input type="hidden" name="count" /> <!-- count for login verification -->
       </div>
     </div>
   </div>

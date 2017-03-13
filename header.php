@@ -11,7 +11,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">PLOG</a>
+      <form id="plog" action="index.php" method="post">
+      <a class="navbar-brand" href="#" type="Submit" name="count">PLOG</a> <!-- count for login verification -->
+      </form>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -43,10 +45,11 @@
           <button type="submit" class="btn btn-default">  search
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
+          <input type="hidden" name="count" /> <!-- count for login verification -->
         </form>
         
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Content/Login/logout.php">Log Out  <span class="glyphicon glyphicon-user" aria-hidden="true"></a></li>
+        <li><a href="index.php">Log Out  <span class="glyphicon glyphicon-user" aria-hidden="true"></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
     

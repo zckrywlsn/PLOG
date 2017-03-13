@@ -155,12 +155,16 @@ include("footer.php");
         }
         
         echo "this is the ID" . $_POST["editid"];
-        
-        
+
         ?>
       <div>
-        <p>Return to Work !</p>
-        <a class="btn btn-default btn-lrg" href="index.php" role="button">Plog</a> 
+      <p>Return to Work !</p>
+        <form id="plog" action="index.php" method="post">
+          <div class="form-group">
+            <button type="submit" class="btn btn-default" >PLOG</button>
+            <input type="hidden" name="count" /> <!-- count for login verification -->
+          </div>
+        </form>
       </div>
   </div>
 </div>

@@ -50,6 +50,7 @@ include("footer.php");
           }
         
         //Checking for delete and editid, 
+        // to delete: $sql = "DELETE FROM MyGuests WHERE id=3";
         
         //Checking for editid,
         if (!empty($_POST["editid"])) {
@@ -82,7 +83,7 @@ include("footer.php");
               if (empty($_POST["PassOn"])) {
                 $PassOnErr = "Passon please";
               } else {
-                $Pass_On = mysqli_real_escape_string($conn, $_POST["PassOn"]); //accounts for special characters
+                $Pass_On = mysqli_real_escape_string($conn, nl2br($_POST["PassOn"])); //accounts for special characters
               }
             }
     
@@ -130,7 +131,7 @@ include("footer.php");
           if (empty($_POST["PassOn"])) {
             $PassOnErr = "Passon please";
           } else {
-            $Pass_On = mysqli_real_escape_string($conn, $_POST["PassOn"]); //accounts for special characters
+            $Pass_On = mysqli_real_escape_string($conn, nl2br($_POST["PassOn"])); //accounts for special characters
           }
         }
         
